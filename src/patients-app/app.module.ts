@@ -1,26 +1,29 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule } from '@angular/router';
+// import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule }    from '@angular/common/http';
-
+import { AppRoutingModule }     from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { PatientComponent } from './patients/patient.component';
+import { PatientAddComponent } from './add-patient/add-patient.component';
 
 @NgModule({
   imports: [
     BrowserModule,
     ReactiveFormsModule,
-    RouterModule.forRoot([
-      { path: '', component: PatientComponent },
-    ]),
+    AppRoutingModule,
+    // RouterModule.forRoot([
+    //   { path: '', component: PatientComponent },
+    // ]),
     HttpClientModule
   ],
   declarations: [
     AppComponent,
     TopBarComponent,
-    PatientComponent
+    PatientComponent,
+    PatientAddComponent
   ],
   bootstrap: [ AppComponent ]
 })

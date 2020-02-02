@@ -23,14 +23,14 @@ export class PatientComponent implements OnInit {
     .subscribe(patients => this.patients = patients);
   }
 
-  add(firstNames: string): void {
-    firstNames = firstNames.trim();
-    if (!firstNames) { return; }
-    this.patientService.addPatient({ firstNames } as Patient)
-      .subscribe(hero => {
-        this.patients.push(hero);
-      });
-  }
+  // add(firstNames: string): void {
+  //   firstNames = firstNames.trim();
+  //   if (!firstNames) { return; }
+  //   this.patientService.addPatient({ firstNames } as Patient)
+  //     .subscribe(hero => {
+  //       this.patients.push(hero);
+  //     });
+  // }
 
   delete(patient: Patient): void {
     this.patients = this.patients.filter(h => h !== patient);
