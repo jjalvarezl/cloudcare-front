@@ -1,0 +1,33 @@
+<h2>Pacientes</h2>
+
+<ul>
+<div *ngFor="let patient of patients">
+
+  <li>
+  <strong>Id</strong>: {{ patient.id }}
+    <ul>
+      <li><strong>Nombres</strong>: {{ patient.firstNames }}</li>
+      <li><strong>Apellidos</strong>: {{ patient.lastNames }}</li>
+      <li><strong>Fecha de cumpleaños</strong>: {{ patient.birthDate }}</li>
+      <li><strong>Tipo de Identificación</strong>: {{ patient.identificationType }}</li>
+      <li><strong>Número de Identificación</strong>: {{ patient.identificationNumber }}</li>
+      <li><strong>Dirección de Resirencia</strong>: {{ patient.residenceAddress }}</li>
+    </ul>
+  </li>
+  <!-- <h3>
+    <a [title]="patient.firstNames + ' '+ patient.lastNames + ' details'">
+      {{ patient.name }}
+    </a>
+  </h3> -->
+
+  <!-- <p *ngIf="patient.date">
+    Description: {{ patient.date }}
+  </p> -->
+
+</div>
+</ul>
+<!--
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->
