@@ -32,12 +32,12 @@ class Patient {
     residenceAddress?: string
   ){
     this.id = id ? id : 0;
-    this.firstNames = firstNames ? firstNames : ""
-    this.lastNames = lastNames ? lastNames : ""
+    this.firstNames = firstNames ? firstNames : "";
+    this.lastNames = lastNames ? lastNames : "";
     this.birthDate = birthDate ? birthDate : new Date()
-    this.identificationType = identificationType ? identificationType : IdentificationType.CITIZENSHIP_CARD
-    this.identificationNumber = identificationNumber ? identificationNumber : ""
-    this.residenceAddress = residenceAddress ? residenceAddress : ""
+    this.identificationType = identificationType ? identificationType : IdentificationType.CITIZENSHIP_CARD;
+    this.identificationNumber = identificationNumber ? identificationNumber : "";
+    this.residenceAddress = residenceAddress ? residenceAddress : "";
   }
 }
 

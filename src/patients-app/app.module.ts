@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule }    from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 // import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -8,9 +9,11 @@ import { AppComponent } from './app.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { PatientComponent } from './patients/patient.component';
 import { PatientAddComponent } from './add-patient/add-patient.component';
+import { PatientEditComponent } from './edit-patient/edit-patient.component';
 
 @NgModule({
   imports: [
+    FormsModule,
     BrowserModule,
     ReactiveFormsModule,
     AppRoutingModule,
@@ -23,7 +26,8 @@ import { PatientAddComponent } from './add-patient/add-patient.component';
     AppComponent,
     TopBarComponent,
     PatientComponent,
-    PatientAddComponent
+    PatientAddComponent,
+    PatientEditComponent
   ],
   bootstrap: [ AppComponent ]
 })

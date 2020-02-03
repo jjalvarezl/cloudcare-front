@@ -88,7 +88,7 @@ export class PatientService {
 
   /** PUT: update the patient on the server */
   updatePatient (patient: Patient): Observable<any> {
-    return this.http.put(this.patientsUrl, patient, this.httpOptions).pipe(
+    return this.http.put(this.patientsUrl+"/"+patient.id, patient, this.httpOptions).pipe(
       tap(_ => this.log(`updated patient id=${patient.id}`)),
       catchError(this.handleError<any>('updatePatient'))
     );

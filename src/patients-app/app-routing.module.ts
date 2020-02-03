@@ -3,13 +3,15 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { PatientComponent }   from './patients/patient.component';
 import { PatientAddComponent }   from './add-patient/add-patient.component';
+import { PatientEditComponent }   from './edit-patient/edit-patient.component';
 // import { HeroesComponent }      from './heroes/heroes.component';
 // import { HeroDetailComponent }  from './hero-detail/hero-detail.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/patients', pathMatch: 'full' },
   { path: 'patients', component: PatientComponent },
-  { path: 'patients/add', component: PatientAddComponent }
+  { path: 'patients/add', component: PatientAddComponent },
+  { path: 'patients/edit/:id', component: PatientEditComponent }
   // { path: 'detail/:id', component: HeroDetailComponent },
   // { path: 'heroes', component: HeroesComponent }
 ];

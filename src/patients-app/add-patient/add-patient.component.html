@@ -1,12 +1,31 @@
-<h1>Añadir paciente</h1>
+<h2>Añadir paciente</h2>
 <div>
-  <label>id: <input #id /> </label><br/>
-  <label>Nombres: <input #firstNames /> </label><br/>
-  <label>Apellidos: <input #lastNames /> </label><br/>
-  <label>Fecha de Cumpleaños: <input #birthDate /> </label><br/>
-  <label>Tipo de Identificación: <input #identificationType /></label><br/>
-  <label>Número de Identificación: <input #identificationNumber /></label><br/>
-  <label>Dirección de residencia: <input #residenceAddress /></label><br/>
+  <label>id:
+    <input [(ngModel)]="patient.id" placeholder="Id"/>
+  </label><br/>
+  <label>Nombres:
+    <input [(ngModel)]="patient.firstNames" placeholder="First names"/>
+  </label><br/>
+  <label>Apellidos:
+    <input [(ngModel)]="patient.lastNames" placeholder="Last names"/>
+  </label><br/>
+  <label>Fecha de Cumpleaños:
+    <input type="date" [ngModel]="patient.birthDate | date:'yyyy-MM-dd'" (ngModelChange)="today = $event" name="dt"/>
+  </label><br/>
+  <label>Tipo de Identificación:
+    <select [(ngModel)]="patient.identificationType">
+      <option *ngFor="let i of identifications" [value]="i.title">
+        {{i.value}}
+      </option>
+    </select>
+  </label><br/>
+  <label>Número de Identificación:
+    <input [(ngModel)]="patient.identificationNumber" placeholder="Identification number"/>
+  </label><br/>
+  <label>Dirección de residencia:
+    <input [(ngModel)]="patient.residenceAddress" placeholder="Residence Address"/>
+  </label><br/>
 </div>
-<button (click)="goBack()">Atrás</button>
+<br/>
 <button (click)="save()">Guardar</button>
+<button (click)="goBack()">Atrás</button>

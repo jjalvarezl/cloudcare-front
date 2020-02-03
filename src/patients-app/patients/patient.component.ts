@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 
 // import { patients } from './patients';
-import {Patient} from './patient'
+import {Patient, IdentificationType} from './patient'
 import {PatientService} from '../patient.service'
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 @Component({
   selector: 'app-patient',
@@ -11,8 +14,15 @@ import {PatientService} from '../patient.service'
 })
 export class PatientComponent implements OnInit {
   patients: Patient[];
+  identification = function (type:IdentificationType) {
+    return IdentificationType[type]
+  };
 
-  constructor(private patientService: PatientService) { }
+  constructor(
+    private route: ActivatedRoute,
+    private patientService: PatientService,
+    private location: Location
+  ) { }
 
   ngOnInit() {
     this.getPatients();
@@ -23,23 +33,10 @@ export class PatientComponent implements OnInit {
     .subscribe(patients => this.patients = patients);
   }
 
-  // add(firstNames: string): void {
-  //   firstNames = firstNames.trim();
-  //   if (!firstNames) { return; }
-  //   this.patientService.addPatient({ firstNames } as Patient)
-  //     .subscribe(hero => {
-  //       this.patients.push(hero);
-  //     });
-  // }
-
   delete(patient: Patient): void {
     this.patients = this.patients.filter(h => h !== patient);
     this.patientService.deletePatient(patient).subscribe();
   }
-
-  // share() {
-  //   window.alert('The product has been shared!');
-  // }
 }
 
 
